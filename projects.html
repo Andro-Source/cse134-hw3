@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Software projects by Jacky Yu, including LectureFetch, a Chrome extension that saves lecture recordings as MP4 files.">
+  <meta name="author" content="Jacky Yu">
+  <title>Projects · Jacky Yu</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/elements.css">
+  <style>
+    header, main, footer { border: 2px solid; }
+    section, article { border: 1px solid; }
+  </style>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e3a8a"/>
+        <text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fff">JY</text>
+      </svg>
+      Jacky Yu
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" type="application/pdf">Resume (PDF)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Projects</h1>
+    <p>Here's what I've built, the parts I worked on, and the tools I used. More projects are on the way.</p>
+
+    <project-card>
+      <article id="lecturefetch">
+        <h2>LectureFetch</h2>
+        <!-- TODO: replace placeholder images/lecturefetch.jpg and .webp with a real screenshot of the popup -->
+        <picture>
+          <source srcset="images/lecturefetch.webp" type="image/webp">
+          <img src="images/lecturefetch.jpg" alt="The LectureFetch popup listing a detected lecture stream with a Download button" width="400" height="225">
+        </picture>
+        <p>LectureFetch is a Chrome extension that saves university lecture recordings as MP4 files, so students can rewatch lectures offline or on a slow connection. It works with Kaltura-based lecture players like UCSD Podcast and Canvas media. It's published on the Chrome Web Store, where it has nearly 100 users.</p>
+        <h3>What I did</h3>
+        <ul>
+          <li>Designed and built the whole extension on Chrome's Manifest V3 platform, with a background service worker and a popup interface.</li>
+          <li>Used the <code>webRequest</code> API to watch network traffic while a lecture plays, pick out the video stream, and show a count badge on the toolbar icon when it finds one.</li>
+          <li>Built the popup that lists each stream it finds, including different quality options such as 720p and 1080p. Each stream has a Download button that saves it as an MP4.</li>
+          <li>Added a Settings option so users can add their own school's media domains.</li>
+          <li>Kept it private by design: everything runs on the user's computer, and no browsing data leaves the browser.</li>
+        </ul>
+        <p>Built with <b>JavaScript</b>, <b>HTML</b>, <b>CSS</b>, and the <b>Chrome Extensions</b> APIs (<code>webRequest</code>, <code>downloads</code>, and <code>storage</code>).</p>
+        <p><a href="https://chromewebstore.google.com/detail/lecturefetch/gpgfocooiclhhpifjalefkejicnpmdlh">Get LectureFetch on the Chrome Web Store</a></p>
+      </article>
+    </project-card>
+
+    <section aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Demo Video</h2>
+      <p>A short walkthrough of LectureFetch finding a lecture stream and downloading it.</p>
+      <!-- TODO: replace VIDEO_ID with the YouTube video ID of the LectureFetch walkthrough -->
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="LectureFetch demo walkthrough on YouTube" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <!-- TODO: content — real email and LinkedIn URL -->
+      <li><a href="mailto:your-email@example.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/your-profile/">LinkedIn</a></li>
+      <li><a href="https://github.com/Andro-Source">GitHub</a></li>
+    </ul>
+    <p><a href="experiments.html">Experiments</a>: HTML element tests for CSE 134B</p>
+    <p><small>&copy; 2026 Jacky Yu</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Jacky Yu: background, programming skills, education at UC San Diego, and interests.">
+  <meta name="author" content="Jacky Yu">
+  <title>About · Jacky Yu</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/elements.css">
+  <style>
+    header, main, footer { border: 2px solid; }
+    section, article { border: 1px solid; }
+  </style>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e3a8a"/>
+        <text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fff">JY</text>
+      </svg>
+      Jacky Yu
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" type="application/pdf">Resume (PDF)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>About Me</h1>
+    <!-- TODO: replace placeholder headshot images/headshot.jpg -->
+    <img src="images/headshot.jpg" alt="Headshot of Jacky Yu" width="200" height="200">
+    <p>I'm Jacky, an Asian American Computer Science student at UC San Diego. I grew up in the Bay Area and will graduate in June 2027.</p>
+    <p>I like building tools that solve real problems. My favorite so far is <a href="projects.html#lecturefetch">LectureFetch</a>, a Chrome extension that saves lecture recordings so students can study offline. It's on the Chrome Web Store with nearly 100 users.</p>
+    <p>Outside of code, I'm usually at the gym or on a golf course. I also like to keep a little mystery about myself, so if you want to know more, you'll have to <a href="contact.html">reach out</a>.</p>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <p>These are rough self-ratings out of 100, where 100 means I'd be comfortable leading a project with it.</p>
+      <!-- TODO: check these levels; keep js/canvas-demo.js and the canvas text on experiments.html in sync -->
+      <h3>Languages</h3>
+      <ul>
+        <li>
+          <label for="skill-python">Python</label>
+          <progress id="skill-python" max="100" value="80">80 out of 100</progress>
+        </li>
+        <li>
+          <label for="skill-javascript">JavaScript</label>
+          <progress id="skill-javascript" max="100" value="85">85 out of 100</progress>
+        </li>
+        <li>
+          <label for="skill-java">Java</label>
+          <progress id="skill-java" max="100" value="75">75 out of 100</progress>
+        </li>
+        <li>
+          <label for="skill-cpp">C++</label>
+          <progress id="skill-cpp" max="100" value="65">65 out of 100</progress>
+        </li>
+      </ul>
+      <h3>Tools</h3>
+      <ul>
+        <li>
+          <label for="tool-git">Git and GitHub</label>
+          <progress id="tool-git" max="100" value="80">80 out of 100</progress>
+        </li>
+        <li>
+          <label for="tool-html-css">HTML and CSS</label>
+          <progress id="tool-html-css" max="100" value="75">75 out of 100</progress>
+        </li>
+        <li>
+          <label for="tool-chrome">Chrome Extensions APIs</label>
+          <progress id="tool-chrome" max="100" value="70">70 out of 100</progress>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <h3>University of California San Diego</h3>
+      <p>B.S. in Computer Science, expected June 2027</p>
+      <p>
+        <label for="degree-progress">Degree progress</label>
+        <progress id="degree-progress" max="4" value="3">3 of 4 years complete</progress>
+      </p>
+      <p>This quarter I'm taking CSE 134B: Web Client Languages, the course this site was first built for.</p>
+    </section>
+
+    <section aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Interests</h2>
+      <p>When I'm not coding, you'll probably find me doing one of these:</p>
+      <ul>
+        <li>Lifting at the gym</li>
+        <li>Playing golf</li>
+        <li>Collecting Pokémon</li>
+        <li>Going to EDM concerts and festivals</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <!-- TODO: content — real email and LinkedIn URL -->
+      <li><a href="mailto:your-email@example.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/your-profile/">LinkedIn</a></li>
+      <li><a href="https://github.com/Andro-Source">GitHub</a></li>
+    </ul>
+    <p><a href="experiments.html">Experiments</a>: HTML element tests for CSE 134B</p>
+    <p><small>&copy; 2026 Jacky Yu</small></p>
+  </footer>
+</body>
+</html>

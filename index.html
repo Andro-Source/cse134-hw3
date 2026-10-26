@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Jacky Yu, a UC San Diego Computer Science student looking for internships and roles in tech. See projects, skills, resume, and contact info.">
+  <meta name="author" content="Jacky Yu">
+  <title>Jacky Yu · Portfolio</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/elements.css">
+  <style>
+    header, main, footer { border: 2px solid; }
+    section, article { border: 1px solid; }
+  </style>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e3a8a"/>
+        <text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fff">JY</text>
+      </svg>
+      Jacky Yu
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" type="application/pdf">Resume (PDF)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="intro-heading">
+      <h1 id="intro-heading">Hi, I'm Jacky Yu</h1>
+      <!-- TODO: replace placeholder headshot images/headshot.jpg and images/headshot.webp -->
+      <picture>
+        <source srcset="images/headshot.webp" type="image/webp">
+        <img src="images/headshot.jpg" alt="Headshot of Jacky Yu" width="200" height="200">
+      </picture>
+      <p>I'm a Computer Science student at UC San Diego, graduating in June 2027. I grew up in the Bay Area, and I like building practical tools that people actually use.</p>
+      <p><strong>I'm looking for internships and roles in tech.</strong></p>
+      <p><a href="resume.pdf" type="application/pdf">View my resume (PDF)</a></p>
+    </section>
+
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Project</h2>
+      <project-card>
+        <article>
+          <h3>LectureFetch</h3>
+          <picture>
+            <source srcset="images/lecturefetch.webp" type="image/webp">
+            <img src="images/lecturefetch.jpg" alt="The LectureFetch popup listing a detected lecture stream with a Download button" width="320" height="180" loading="lazy">
+          </picture>
+          <p>A Chrome extension that saves university lecture recordings as MP4 files for offline studying. It has nearly 100 users on the Chrome Web Store.</p>
+          <p><a href="projects.html#lecturefetch">More about LectureFetch<span aria-hidden="true"> →</span></a></p>
+        </article>
+      </project-card>
+    </section>
+
+    <section aria-labelledby="latest-heading">
+      <h2 id="latest-heading">Latest Blog Post</h2>
+      <article>
+        <h3>A Beginner's Guide to the Gym</h3>
+        <p>Posted <time datetime="2026-10-15">October 15, 2026</time></p>
+        <p>Walking into a gym for the first time is intimidating. Here's the simple plan I'd give anyone who's just starting out.</p>
+        <p><a href="blog.html#gym-guide">Read the full post<span aria-hidden="true"> →</span></a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <!-- TODO: content — real email and LinkedIn URL -->
+      <li><a href="mailto:your-email@example.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/your-profile/">LinkedIn</a></li>
+      <li><a href="https://github.com/Andro-Source">GitHub</a></li>
+    </ul>
+    <p><a href="experiments.html">Experiments</a>: HTML element tests for CSE 134B</p>
+    <p><small>&copy; 2026 Jacky Yu</small></p>
+  </footer>
+
+  <dialog open aria-labelledby="notice-title">
+    <p id="notice-title"><strong>This site is a work in progress.</strong></p>
+    <p>This is the HTML-only version built for CSE 134B, so it's unstyled on purpose. Layout and design are coming in a later update.</p>
+    <form method="dialog">
+      <button type="submit">Close</button>
+    </form>
+  </dialog>
+</body>
+</html>

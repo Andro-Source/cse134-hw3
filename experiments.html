@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Experiments with media, drawing, template, MathML, and custom HTML elements on Jacky Yu's portfolio.">
+  <meta name="author" content="Jacky Yu">
+  <title>Experiments · Jacky Yu</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/elements.css">
+  <style>
+    header, main, footer { border: 2px solid; }
+    section, article { border: 1px solid; }
+  </style>
+  <script src="js/hello-world.js" defer></script>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#1e3a8a"/>
+        <text x="20" y="26" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#fff">JY</text>
+      </svg>
+      Jacky Yu
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resume.pdf" type="application/pdf">Resume (PDF)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>HTML Experiments</h1>
+    <p>This page tries out HTML elements that go beyond text and links: media, drawing, templates, math, and custom elements. It's linked only from the footer because it's a sandbox, not part of the portfolio itself.</p>
+
+    <section aria-labelledby="audio-heading">
+      <h2 id="audio-heading">Audio</h2>
+      <p>The <code>audio</code> element plays sound with the browser's built-in controls. Each <code>source</code> offers a file and its type, and the browser plays the first one it supports. The text inside only shows in browsers that can't play audio at all.</p>
+      <audio controls preload="none">
+        <source src="media/t-rex-roar.mp3" type="audio/mpeg">
+        <p>Your browser can't play this audio. <a href="media/t-rex-roar.mp3">Download the T. rex roar (MP3)</a>.</p>
+      </audio>
+      <p><small>Clip: “T-rex roar” from the MDN Web Docs sample media, released under CC0.</small></p>
+    </section>
+
+    <section aria-labelledby="video-heading">
+      <h2 id="video-heading">Video</h2>
+      <p>The <code>video</code> element works the same way. This one lists a WebM file first because it's about half the size, and falls back to MP4 for browsers that don't support WebM.</p>
+      <video controls preload="metadata" width="480" height="270">
+        <source src="media/flower.webm" type="video/webm">
+        <source src="media/flower.mp4" type="video/mp4">
+        <p>Your browser can't play this video. <a href="media/flower.mp4">Download the flower clip (MP4)</a>.</p>
+      </video>
+      <p><small>Clip: time-lapse of a blooming flower from the MDN Web Docs sample media, released under CC0.</small></p>
+    </section>
+
+    <section aria-labelledby="canvas-heading">
+      <h2 id="canvas-heading">Canvas</h2>
+      <p>A <code>canvas</code> is a blank bitmap that JavaScript draws on. The short script below draws a bar chart of my skill levels. The text inside the element is the fallback for browsers that can't render canvas.</p>
+      <canvas id="skills-canvas" width="360" height="180" role="img" aria-label="Bar chart of skill levels: Python 80, JavaScript 85, Java 75, C++ 65 (out of 100)">
+        Skill levels: Python 80, JavaScript 85, Java 75, C++ 65 (out of 100).
+      </canvas>
+      <noscript>
+        <p>JavaScript is turned off, so the chart above stays blank. The same skills are listed on the <a href="about.html#skills-heading">About page</a>.</p>
+      </noscript>
+      <script src="js/canvas-demo.js" defer></script>
+    </section>
+
+    <section aria-labelledby="template-heading">
+      <h2 id="template-heading">Template</h2>
+      <p>A <code>template</code> holds markup that the browser parses but never renders. In a later homework, JavaScript will clone the project card below once for each project in a data file, so I won't have to copy the markup by hand. Nothing shows up here on purpose; view the page source to see it.</p>
+      <template id="project-card-template">
+        <project-card>
+          <article>
+            <h3>Project name</h3>
+            <img src="images/lecturefetch.jpg" alt="Screenshot of the project" width="320" height="180">
+            <p>One-sentence summary of what the project does.</p>
+            <p><a href="https://github.com/Andro-Source">View the code on GitHub</a></p>
+          </article>
+        </project-card>
+      </template>
+    </section>
+
+    <section aria-labelledby="mathml-heading">
+      <h2 id="mathml-heading">MathML: Mass–Energy Equivalence</h2>
+      <p>Einstein's mass–energy equivalence, written in MathML so the browser lays out the formula itself instead of showing a picture of it:</p>
+      <math display="block">
+        <mi>E</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+      </math>
+      <p><var>E</var> is energy, <var>m</var> is mass, and <var>c</var> is the speed of light.</p>
+    </section>
+
+    <section aria-labelledby="mathml-notes-heading">
+      <h2 id="mathml-notes-heading">Why MathML Support Came So Late</h2>
+      <p>MathML became a W3C standard in 1998, and HTML5 lets you write <code>&lt;math&gt;</code> straight into a page. But a web feature is only practical once every major browser supports it, and for most of that time Chrome didn't. Here's the history according to <a href="https://caniuse.com/mathml">Can I use</a>:</p>
+      <ul>
+        <li><strong>Firefox</strong> supported MathML early, fully since Firefox 4 in 2011.</li>
+        <li><strong>Safari</strong> had partial support starting with version 3.1, and full support from Safari 10 in 2016.</li>
+        <li><strong>Chrome</strong> shipped MathML in version 24 in 2013, then removed it in version 25 because the implementation was unstable. It stayed out for about ten years.</li>
+        <li><strong>Internet Explorer</strong> and the original <strong>Edge</strong> never supported it natively.</li>
+        <li><strong>Chrome and Edge 109</strong> finally added it in January 2023. They implement MathML Core, a smaller and more precisely defined part of MathML. Engineers at Igalia, an open-source consultancy, did much of that work rather than the Chrome team.</li>
+      </ul>
+      <p>Chromium-based browsers make up most of the browser market, so for years developers couldn't count on native MathML. They used JavaScript libraries like MathJax and KaTeX to render equations, or just used images. The browsers that did support MathML also drew it differently from each other. That's part of why MathML Core exists: it spells out exactly how each element should lay out so every engine draws the same result. Since 2023, MathML works in every major browser, and Can I use lists it at about 96% global support.</p>
+    </section>
+
+    <section aria-labelledby="custom-heading">
+      <h2 id="custom-heading">Custom Elements</h2>
+      <p>The <code>hello-world</code> element below doesn't display anything. When the browser sees it, a short script logs “Hello World!” to the developer console without changing the page. Open DevTools (<kbd>F12</kbd>) and check the Console tab to see the message.</p>
+      <hello-world></hello-world>
+      <p>The other custom element, <code>project-card</code>, is a CSS-only wrapper that gives each project on the <a href="projects.html">Projects page</a> a border and spacing, in place of a generic <code>div</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <!-- TODO: content — real email and LinkedIn URL -->
+      <li><a href="mailto:your-email@example.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/your-profile/">LinkedIn</a></li>
+      <li><a href="https://github.com/Andro-Source">GitHub</a></li>
+    </ul>
+    <p><a href="experiments.html" aria-current="page">Experiments</a>: HTML element tests for CSE 134B</p>
+    <p><small>&copy; 2026 Jacky Yu</small></p>
+  </footer>
+</body>
+</html>
